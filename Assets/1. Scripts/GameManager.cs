@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PlayerPositionSetter _playerPositionSetter;
 
+    [SerializeField] private UI _UI;
+
     private void Start()
     {
         StartLevel();
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour
         _keyManager.Respawn(_mazeSpawner.maze);
 
         _playerPositionSetter.SetPosition();
+
+        _UI.Restart();
     }
 }
 
