@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private MazeSpawner _mazeSpawner;
+    [SerializeField] private KeySpawner _keySpawner;
+
+    [SerializeField] private PlayerPositionSetter _playerPositionSetter ;
+
+
+
+    private void Start()
     {
-        
+        StartLevel();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartLevel()
     {
-        
+        _mazeSpawner.ClearMaze();
+        _mazeSpawner.Spawn();
+
+        _keySpawner.Clear();
+        _keySpawner.Spawn(_mazeSpawner.maze, 4);
+
+        _playerPositionSetter.SetPosition();
     }
 }
+
