@@ -166,13 +166,13 @@ public class MazeGenerator
         {
             maze[furthest.x + 1, furthest.y].wallLeft = false;
             mazeDoorCell.x = furthest.x + 1;
-            mazeDoorCell.left = true;
+            mazeDoorCell.rigt = true;
         }
         else if (furthest.y == height - 2)
         {
             maze[furthest.x, furthest.y + 1].wallBottom = false;
             mazeDoorCell.y = furthest.y + 1;
-            mazeDoorCell.bottom = true;
+            mazeDoorCell.top = true;
         }
 
         return mazeDoorCell;

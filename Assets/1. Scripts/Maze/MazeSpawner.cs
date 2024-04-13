@@ -21,6 +21,12 @@ public class MazeSpawner : MonoBehaviour
         MazeGenerator generator = new MazeGenerator(_width, _height);
         maze = generator.GenerateMaze();
 
+        SpawnWalls();
+        SpawnDoor();
+    }
+
+    private void SpawnWalls()
+    {
         for (int x = 0; x < maze.cells.GetLength(0); x++)
         {
             for (int y = 0; y < maze.cells.GetLength(1); y++)
@@ -31,19 +37,41 @@ public class MazeSpawner : MonoBehaviour
                 c.wallBottom.SetActive(maze.cells[x, y].wallBottom);
             }
         }
+    }
+    
+    private void SpawnDoor()
+    {
         Door d;
         if (maze.mazeDoorCell.bottom)
         {
+            print("bottom");
+            d = Instantiate(_doorPrefab,
+             new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
+        _cellPrefab.wallBottom.transform.rotation * Quaternion.Euler(0, 180, 0),
+             transform);
+        }
+        if (maze.mazeDoorCell.top)
+        {
+            print("top");
             d = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
                _cellPrefab.wallBottom.transform.rotation,
                 transform);
         }
-        if (maze.mazeDoorCell.left)
+        else if (maze.mazeDoorCell.left)
         {
+            print("left");
             d = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
                 _cellPrefab.wallLeft.transform.rotation,
+                transform);
+        }
+        else if (maze.mazeDoorCell.rigt)
+        {
+            print("rigt");
+            d = Instantiate(_doorPrefab,
+                new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
+              _cellPrefab.wallLeft.transform.rotation * Quaternion.Euler(0, 180, 0),
                 transform);
         }
     }
