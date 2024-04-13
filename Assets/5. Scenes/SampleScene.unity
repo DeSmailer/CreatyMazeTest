@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mazeSpawner: {fileID: 388914160}
-  _keySpawner: {fileID: 1206955223}
+  _keyManager: {fileID: 1206955225}
   _playerPositionSetter: {fileID: 285529500}
 --- !u!1 &1058882819
 GameObject:
@@ -569,8 +569,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1206955224}
   - component: {fileID: 1206955223}
+  - component: {fileID: 1206955225}
   m_Layer: 0
-  m_Name: Key Spawner
+  m_Name: Key Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -606,6 +607,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1206955225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206955222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4549b1084b52e0043934077abf700443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keysPicked: 0
+  keysToSpawn: 3
+  _keySpawner: {fileID: 1206955223}
+  OnChangeKeysPickedCount:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAllKeysPicked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1455146003
 GameObject:
   m_ObjectHideFlags: 0

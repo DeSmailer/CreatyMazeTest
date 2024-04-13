@@ -14,7 +14,6 @@ public class PlayerMove : MonoBehaviour
 
     public void Move(float speedCoefficient)
     {
-        Debug.Log("speedCoefficient " + speedCoefficient);
         _rgb.velocity = transform.forward * _speed * speedCoefficient;
     }
 

@@ -6,14 +6,19 @@ public class KeySpawner : MonoBehaviour
     [SerializeField] private Key _keyPrefab;
     [SerializeField] private Vector3 _offset;
 
-    public void Spawn(Maze maze, int count)
+    public List<Key> Spawn(Maze maze, int count)
     {
         List<MazeGeneratorCell> randomCells = SelectCells(maze, count);
+        List<Key> keys = new List<Key>() ;
+
         foreach (var cell in randomCells)
         {
             Key key = Instantiate(_keyPrefab, transform, true);
             key.transform.position = new Vector3(cell.x, 0, cell.y) + _offset;
+            keys.Add(key);
         }
+
+        return keys;
     }
 
     private List<MazeGeneratorCell> SelectCells(Maze maze, int count)

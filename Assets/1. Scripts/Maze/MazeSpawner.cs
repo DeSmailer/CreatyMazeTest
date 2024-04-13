@@ -9,6 +9,12 @@ public class MazeSpawner : MonoBehaviour
 
     public Maze maze;
 
+    public void Respawn()
+    {
+        ClearMaze();
+        Spawn();
+    }
+
     public void Spawn()
     {
         MazeGenerator generator = new MazeGenerator(_width, _height);

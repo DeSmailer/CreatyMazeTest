@@ -3,11 +3,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private MazeSpawner _mazeSpawner;
-    [SerializeField] private KeySpawner _keySpawner;
+    [SerializeField] private KeyManager _keyManager;
 
-    [SerializeField] private PlayerPositionSetter _playerPositionSetter ;
-
-
+    [SerializeField] private PlayerPositionSetter _playerPositionSetter;
 
     private void Start()
     {
@@ -16,11 +14,9 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel()
     {
-        _mazeSpawner.ClearMaze();
-        _mazeSpawner.Spawn();
+        _mazeSpawner.Respawn();
 
-        _keySpawner.Clear();
-        _keySpawner.Spawn(_mazeSpawner.maze, 4);
+        _keyManager.Respawn(_mazeSpawner.maze);
 
         _playerPositionSetter.SetPosition();
     }
