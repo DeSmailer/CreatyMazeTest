@@ -3,6 +3,7 @@
 public class MazeSpawner : MonoBehaviour
 {
     [SerializeField] private Cell _cellPrefab;
+    [SerializeField] private Door _doorPrefab;
 
     [SerializeField] private int _width;
     [SerializeField] private int _height;
