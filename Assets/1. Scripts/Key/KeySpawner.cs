@@ -31,6 +31,7 @@ public class KeySpawner : MonoBehaviour
         }
         return randomCells;
     }
+
     public void Clear()
     {
         Transform[] children = new Transform[transform.childCount];
