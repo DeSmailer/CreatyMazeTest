@@ -19,7 +19,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Rotate(float rotationCoefficient)
     {
-        Quaternion deltaRotation = Quaternion.Euler(_rotationSpeed * rotationCoefficient * Time.deltaTime);
+        Quaternion deltaRotation = Quaternion.Euler(_rotationSpeed * rotationCoefficient);
         _rgb.MoveRotation(_rgb.rotation * deltaRotation);
     }
 }
