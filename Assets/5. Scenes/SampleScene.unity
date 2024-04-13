@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keysPicked: 0
-  keysToSpawn: 3
+  keysToSpawn: 4
   _keySpawner: {fileID: 1206955223}
   OnChangeKeysPickedCount:
     m_PersistentCalls:

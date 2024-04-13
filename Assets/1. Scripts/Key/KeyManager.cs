@@ -10,7 +10,8 @@ public class KeyManager : MonoBehaviour
     public int keysToSpawn = 4;
 
     [SerializeField] private KeySpawner _keySpawner;
-    List<Key> keys;
+
+    private List<Key> _keys;
 
     public UnityEvent OnChangeKeysPickedCount;
     public UnityEvent OnAllKeysPicked;
@@ -20,14 +21,14 @@ public class KeyManager : MonoBehaviour
         _keySpawner.Clear();
         keysPicked = 0;
 
-        keys = _keySpawner.Spawn(maze, keysToSpawn);
+        _keys = _keySpawner.Spawn(maze, keysToSpawn);
 
         SubscribeToEvents();
     }
 
     public void SubscribeToEvents()
     {
-        foreach (var key in keys)
+        foreach (var key in _keys)
         {
             key.OnCollect.AddListener(ChangeKeysPickedCount);
         }
