@@ -199,6 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cellPrefab: {fileID: 8730277752400647720, guid: c09c593366de8ce44b92111f3dfe4c85,
     type: 3}
+  _doorPrefab: {fileID: 5552292928635282622, guid: 9cf437f66d2c9334e8aab09b4ee500ef,
+    type: 3}
   _width: 5
   _height: 5
 --- !u!4 &388914161

@@ -39,7 +39,7 @@ public class MazeGenerator
         Maze maze = new Maze();
 
         maze.cells = cells;
-        maze.finishPosition = PlaceMazeExit(cells);
+        maze.mazeDoorCell = PlaceMazeExit(cells);
 
         return maze;
     }
@@ -120,9 +120,10 @@ public class MazeGenerator
         }
     }
 
-    private Vector2Int PlaceMazeExit(MazeGeneratorCell[,] maze)
+    private MazeDoorCell PlaceMazeExit(MazeGeneratorCell[,] maze)
     {
         MazeGeneratorCell furthest = maze[0, 0];
+        MazeDoorCell mazeDoorCell = new MazeDoorCell();
 
         for (int x = 0; x < maze.GetLength(0); x++)
         {
@@ -148,23 +149,32 @@ public class MazeGenerator
             }
         }
 
+        mazeDoorCell.x = furthest.x;
+        mazeDoorCell.y = furthest.y;
+
         if (furthest.x == 0)
         {
             furthest.wallLeft = false;
+            mazeDoorCell.left = true;
         }
         else if (furthest.y == 0)
         {
             furthest.wallBottom = false;
+            mazeDoorCell.bottom = true;
         }
         else if (furthest.x == width - 2)
         {
             maze[furthest.x + 1, furthest.y].wallLeft = false;
+            mazeDoorCell.x = furthest.x + 1;
+            mazeDoorCell.left = true;
         }
         else if (furthest.y == height - 2)
         {
             maze[furthest.x, furthest.y + 1].wallBottom = false;
+            mazeDoorCell.y = furthest.y + 1;
+            mazeDoorCell.bottom = true;
         }
 
-        return new Vector2Int(furthest.x, furthest.y);
+        return mazeDoorCell;
     }
 }

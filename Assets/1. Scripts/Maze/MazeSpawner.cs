@@ -31,6 +31,21 @@ public class MazeSpawner : MonoBehaviour
                 c.wallBottom.SetActive(maze.cells[x, y].wallBottom);
             }
         }
+        Door d;
+        if (maze.mazeDoorCell.bottom)
+        {
+            d = Instantiate(_doorPrefab,
+                new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
+               _cellPrefab.wallBottom.transform.rotation,
+                transform);
+        }
+        if (maze.mazeDoorCell.left)
+        {
+            d = Instantiate(_doorPrefab,
+                new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
+                _cellPrefab.wallLeft.transform.rotation,
+                transform);
+        }
     }
 
     public void ClearMaze()
