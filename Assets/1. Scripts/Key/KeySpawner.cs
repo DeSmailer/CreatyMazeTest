@@ -8,8 +8,8 @@ public class KeySpawner : MonoBehaviour
 
     public List<Key> Spawn(Maze maze, int count)
     {
-        List<MazeGeneratorCell> randomCells = SelectCells(maze, count);
-        List<Key> keys = new List<Key>() ;
+        HashSet<MazeGeneratorCell> randomCells = SelectCells(maze, count);
+        List<Key> keys = new List<Key>();
 
         foreach (var cell in randomCells)
         {
@@ -21,18 +21,21 @@ public class KeySpawner : MonoBehaviour
         return keys;
     }
 
-    private List<MazeGeneratorCell> SelectCells(Maze maze, int count)
+    private HashSet<MazeGeneratorCell> SelectCells(Maze maze, int count)
     {
-        List<MazeGeneratorCell> randomCells = new List<MazeGeneratorCell>();
+        HashSet<MazeGeneratorCell> randomCells = new HashSet<MazeGeneratorCell>();
 
-        for (int i = 0; i < count; i++)
+        while (randomCells.Count < count)
         {
             int randomX = Random.Range(0, maze.cells.GetLength(0) - 1);
             int randomY = Random.Range(0, maze.cells.GetLength(1) - 1);
 
-            MazeGeneratorCell randomCell = maze.cells[randomX, randomY];
+            if (!(randomX == 0 && randomY == 0))
+            {
+                MazeGeneratorCell randomCell = maze.cells[randomX, randomY];
 
-            randomCells.Add(randomCell);
+                randomCells.Add(randomCell);
+            }
         }
         return randomCells;
     }

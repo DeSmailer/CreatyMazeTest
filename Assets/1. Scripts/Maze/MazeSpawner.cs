@@ -44,7 +44,6 @@ public class MazeSpawner : MonoBehaviour
     {
         if (maze.mazeDoorCell.bottom)
         {
-            print("bottom");
             door = Instantiate(_doorPrefab,
              new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
         _cellPrefab.wallBottom.transform.rotation * Quaternion.Euler(0, 180, 0),
@@ -52,7 +51,6 @@ public class MazeSpawner : MonoBehaviour
         }
         if (maze.mazeDoorCell.top)
         {
-            print("top");
             door = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
                _cellPrefab.wallBottom.transform.rotation,
@@ -60,7 +58,6 @@ public class MazeSpawner : MonoBehaviour
         }
         else if (maze.mazeDoorCell.left)
         {
-            print("left");
             door = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
                 _cellPrefab.wallLeft.transform.rotation,
@@ -68,7 +65,6 @@ public class MazeSpawner : MonoBehaviour
         }
         else if (maze.mazeDoorCell.rigt)
         {
-            print("rigt");
             door = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
               _cellPrefab.wallLeft.transform.rotation * Quaternion.Euler(0, 180, 0),
