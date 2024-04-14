@@ -4,12 +4,14 @@ using UnityEngine.Events;
 
 public class KeyManager : MonoBehaviour
 {
-    public int keysPicked = 0;
+    private int _keysPicked = 0;
     public int keysToSpawn = 4;
 
     [SerializeField] private KeySpawner _keySpawner;
 
     private List<Key> _keys;
+
+    public int KeysPicked => _keysPicked;
 
     public UnityEvent OnChangeKeysPickedCount;
     public UnityEvent OnAllKeysPicked;
@@ -17,7 +19,7 @@ public class KeyManager : MonoBehaviour
     public void Respawn(Maze maze)
     {
         _keySpawner.Clear();
-        keysPicked = 0;
+        _keysPicked = 0;
 
         _keys = _keySpawner.Spawn(maze, keysToSpawn);
 
@@ -34,14 +36,14 @@ public class KeyManager : MonoBehaviour
 
     public void ChangeKeysPickedCount()
     {
-        keysPicked++;
+        _keysPicked++;
         OnChangeKeysPickedCount?.Invoke();
-        Debug.Log("OnChangeKeysPickedCount " + keysPicked);
+        Debug.Log("OnChangeKeysPickedCount " + _keysPicked);
 
-        if (keysPicked == keysToSpawn)
+        if (_keysPicked == keysToSpawn)
         {
             OnAllKeysPicked?.Invoke();
-            Debug.Log("OnAllKeysPicked " + keysPicked);
+            Debug.Log("OnAllKeysPicked " + _keysPicked);
         }
     }
 }

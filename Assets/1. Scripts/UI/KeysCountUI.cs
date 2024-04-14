@@ -13,6 +13,6 @@ public class KeysCountUI : MonoBehaviour
 
     public void Display()
     {
-        keysCountText.text = $"{_keyManager.keysPicked} / {_keyManager.keysToSpawn} ";
+        keysCountText.text = $"{_keyManager.KeysPicked} / {_keyManager.keysToSpawn} ";
     }
 }
