@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     private void OnWinHandler()
     {
         _UI.WinLoseWindow.ShowWinWindow();
+        _timer.StopTimer();
     }
 
     private void OnLoseHandler()
