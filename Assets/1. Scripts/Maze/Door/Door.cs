@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    //[SerializeField] private Animator _animator;
-    //private const string OPEN_ANIMATION = "open";
-
     [SerializeField] private DoorController _doorController;
     [SerializeField] private WinZone _winZone;
 
@@ -20,6 +17,5 @@ public class Door : MonoBehaviour
     public void Open()
     {
         _doorController.OpenDoor();
-        //_animator.Play(OPEN_ANIMATION);
     }
 }
