@@ -4,9 +4,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private MazeSpawner _mazeSpawner;
     [SerializeField] private KeyManager _keyManager;
-
     [SerializeField] private PlayerPositionSetter _playerPositionSetter;
-
+    [SerializeField] private Timer _timer;
     [SerializeField] private UI _UI;
 
     private void Start()
@@ -22,6 +21,8 @@ public class GameManager : MonoBehaviour
         _mazeSpawner.door.Initialize(_keyManager);
 
         _playerPositionSetter.SetPosition();
+
+        _timer.RestartTimer();
 
         _UI.Restart();
     }
