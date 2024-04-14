@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     {
         _mazeSpawner.Respawn();
 
-        _keyManager.Respawn(_mazeSpawner.maze);
-        _mazeSpawner.door.Initialize(_keyManager);
+        _keyManager.Respawn(_mazeSpawner.Maze);
+        _mazeSpawner.Door.Initialize(_keyManager);
 
         _playerPositionSetter.SetPosition();
 
