@@ -9,6 +9,7 @@ public class MazeSpawner : MonoBehaviour
     [SerializeField] private int _height;
 
     public Maze maze;
+    public Door door;
 
     public void Respawn()
     {
@@ -38,14 +39,13 @@ public class MazeSpawner : MonoBehaviour
             }
         }
     }
-    
+
     private void SpawnDoor()
     {
-        Door d;
         if (maze.mazeDoorCell.bottom)
         {
             print("bottom");
-            d = Instantiate(_doorPrefab,
+            door = Instantiate(_doorPrefab,
              new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
         _cellPrefab.wallBottom.transform.rotation * Quaternion.Euler(0, 180, 0),
              transform);
@@ -53,7 +53,7 @@ public class MazeSpawner : MonoBehaviour
         if (maze.mazeDoorCell.top)
         {
             print("top");
-            d = Instantiate(_doorPrefab,
+            door = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallBottom.transform.position,
                _cellPrefab.wallBottom.transform.rotation,
                 transform);
@@ -61,7 +61,7 @@ public class MazeSpawner : MonoBehaviour
         else if (maze.mazeDoorCell.left)
         {
             print("left");
-            d = Instantiate(_doorPrefab,
+            door = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
                 _cellPrefab.wallLeft.transform.rotation,
                 transform);
@@ -69,7 +69,7 @@ public class MazeSpawner : MonoBehaviour
         else if (maze.mazeDoorCell.rigt)
         {
             print("rigt");
-            d = Instantiate(_doorPrefab,
+            door = Instantiate(_doorPrefab,
                 new Vector3(maze.mazeDoorCell.x, 0, maze.mazeDoorCell.y) + _cellPrefab.wallLeft.transform.position,
               _cellPrefab.wallLeft.transform.rotation * Quaternion.Euler(0, 180, 0),
                 transform);
