@@ -8,6 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Timer _timer;
     [SerializeField] private UI _UI;
 
+    [SerializeField] private WinLoseChecker _winLoseChecker;
+
+    private void Awake()
+    {
+        _winLoseChecker.OnWin.AddListener(OnWinHandler);
+        _winLoseChecker.OnLose.AddListener(OnLoseHandler);
+    }
+
     private void Start()
     {
         StartLevel();
@@ -24,7 +32,19 @@ public class GameManager : MonoBehaviour
 
         _timer.RestartTimer();
 
+        _winLoseChecker.Restart(_mazeSpawner.Door.WinZone);
+
         _UI.Restart();
+    }
+
+    private void OnWinHandler()
+    {
+        _UI.WinLoseWindow.ShowWinWindow();
+    }
+
+    private void OnLoseHandler()
+    {
+        _UI.WinLoseWindow.ShowLoseWindow();
     }
 }
 

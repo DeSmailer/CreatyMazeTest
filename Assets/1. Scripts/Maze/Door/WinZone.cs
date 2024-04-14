@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WinZone : MonoBehaviour
 {
+    public UnityEvent OnWin;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Player>())
         {
-            FindFirstObjectByType<WinLoseWindow>().ShowWinWindow();
-            Debug.Log("+");
+            OnWin?.Invoke();
+            //FindFirstObjectByType<WinLoseWindow>().ShowWinWindow();
+            //Debug.Log("+");
         }
     }
 }

@@ -521,7 +521,7 @@ MonoBehaviour:
     type: 3}
   _width: 6
   _height: 6
-  door: {fileID: 0}
+  _door: {fileID: 0}
 --- !u!4 &388914161
 Transform:
   m_ObjectHideFlags: 0
@@ -1191,6 +1191,7 @@ MonoBehaviour:
   _playerPositionSetter: {fileID: 285529500}
   _timer: {fileID: 1997737052}
   _UI: {fileID: 2131643512}
+  _winLoseChecker: {fileID: 1990545852}
 --- !u!1 &1038353125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,6 +3079,57 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1966007003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990545851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990545853}
+  - component: {fileID: 1990545852}
+  m_Layer: 0
+  m_Name: WinLoseChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1990545852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990545851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949e8d0e0a975444cb989daade594f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timer: {fileID: 1997737052}
+  OnWin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLose:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1990545853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990545851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 93.74202, y: 72.45736, z: -1.2000864}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997737051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,12 +3564,13 @@ SceneRoots:
   - {fileID: 1159237968}
   - {fileID: 714764734}
   - {fileID: 1874227663}
+  - {fileID: 285529499}
   - {fileID: 152175580}
   - {fileID: 1005096064}
   - {fileID: 388914161}
-  - {fileID: 285529499}
   - {fileID: 1206955224}
   - {fileID: 1997737053}
+  - {fileID: 1990545853}
   - {fileID: 1541505716}
   - {fileID: 2131643511}
   - {fileID: 632340177}

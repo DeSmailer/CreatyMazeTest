@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 4358330237540499439}
+  _winZone: {fileID: 8157830658170321485}
 --- !u!95 &4358330237540499439
 Animator:
   serializedVersion: 5
@@ -983,6 +984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa1a0b4caf9f634eaaa29aad5b893e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnWin:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8425814302893677251
 GameObject:
   m_ObjectHideFlags: 0
