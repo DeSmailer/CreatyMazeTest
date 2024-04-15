@@ -5,6 +5,7 @@ public class MazeGeneratorCell
 
     public bool wallLeft = true;
     public bool wallBottom = true;
+    public bool floor = true;
 
     public bool visited = false;
     public int distanceFromStart;

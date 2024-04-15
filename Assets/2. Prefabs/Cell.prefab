@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5170016548011200387}
   - component: {fileID: 8730277752400647720}
   m_Layer: 0
-  m_Name: Cell 3D
+  m_Name: Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallLeft: {fileID: 4978427363869707494}
   wallBottom: {fileID: 601811232767393880}
+  floor: {fileID: 7343050596378472436}
 --- !u!1 &7343050596378472436
 GameObject:
   m_ObjectHideFlags: 0

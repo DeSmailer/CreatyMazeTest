@@ -35,6 +35,7 @@ public class MazeGenerator
         }
 
         RemoveWallsWithBacktracker(cells);
+        RemoveFloors(cells);
 
         Maze maze = new Maze();
 
@@ -92,6 +93,19 @@ public class MazeGenerator
             }
         }
         while (stack.Count > 0);
+    }
+
+    private void RemoveFloors(MazeGeneratorCell[,] maze)
+    {
+        for (int y = 0; y < height; y++)
+        {
+            maze[width - 1, y].floor = false;
+        }
+
+        for (int x = 0; x < width; x++)
+        {
+            maze[x, height - 1].floor = false;
+        }
     }
 
     private void RemoveWall(MazeGeneratorCell a, MazeGeneratorCell b)

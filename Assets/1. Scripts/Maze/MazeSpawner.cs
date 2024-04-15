@@ -39,6 +39,7 @@ public class MazeSpawner : MonoBehaviour
 
                 c.wallLeft.SetActive(_maze.cells[x, y].wallLeft);
                 c.wallBottom.SetActive(_maze.cells[x, y].wallBottom);
+                c.floor.SetActive(_maze.cells[x, y].floor);
             }
         }
     }
