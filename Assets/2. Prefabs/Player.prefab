@@ -45,7 +45,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454994421837705351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 417a82b9fee2dcb4a85e916c6481ef50, type: 3}
   m_Name: 
@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d537f9a8aaf4412489f1b1a1101d5fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
-  _rotationSpeed: {x: 0, y: 2, z: 0}
+  _speed: 4
+  _rotationSpeed: {x: 0, y: 5, z: 0}
 --- !u!54 &8951367335155914583
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 1}
+  m_BackGroundColor: {r: 0.9607843, g: 1, b: 0.8745098, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

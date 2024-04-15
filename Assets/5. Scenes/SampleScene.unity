@@ -3211,21 +3211,6 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 2030461585}
-    - target: {fileID: 2590998437385174439, guid: 7d08270f490c6474b941f1058d44b51b,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.8745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 2590998437385174439, guid: 7d08270f490c6474b941f1058d44b51b,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2590998437385174439, guid: 7d08270f490c6474b941f1058d44b51b,
-        type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.9607843
-      objectReference: {fileID: 0}
     - target: {fileID: 8155080888207481369, guid: 7d08270f490c6474b941f1058d44b51b,
         type: 3}
       propertyPath: m_LocalPosition.x
